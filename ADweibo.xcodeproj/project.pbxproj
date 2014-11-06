@@ -19,6 +19,15 @@
 		091923561A0BD57600538C0C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0919233E1A0BD57600538C0C /* UIKit.framework */; };
 		0919235E1A0BD57600538C0C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0919235C1A0BD57600538C0C /* InfoPlist.strings */; };
 		091923601A0BD57600538C0C /* ADweiboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0919235F1A0BD57600538C0C /* ADweiboTests.m */; };
+		091923831A0BD77F00538C0C /* ADDiscoverTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 091923821A0BD77F00538C0C /* ADDiscoverTableViewController.m */; };
+		091923861A0BD79100538C0C /* ADHomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 091923851A0BD79100538C0C /* ADHomeTableViewController.m */; };
+		091923891A0BD7A500538C0C /* ADMeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 091923881A0BD7A500538C0C /* ADMeTableViewController.m */; };
+		0919238C1A0BD7B500538C0C /* ADMessageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0919238B1A0BD7B500538C0C /* ADMessageTableViewController.m */; };
+		0919238F1A0BDAE900538C0C /* ADTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0919238E1A0BDAE900538C0C /* ADTabBarController.m */; };
+		091923931A0BDB5F00538C0C /* UIImage+AD.m in Sources */ = {isa = PBXBuildFile; fileRef = 091923921A0BDB5F00538C0C /* UIImage+AD.m */; };
+		09ED8BAA1A0BDF9600328400 /* ADTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ED8BA91A0BDF9600328400 /* ADTabBar.m */; };
+		09ED8BAD1A0BE15100328400 /* ADTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ED8BAC1A0BE15100328400 /* ADTabBarButton.m */; };
+		09ED8BB01A0BEA9000328400 /* ADBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ED8BAF1A0BEA9000328400 /* ADBadgeButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +57,24 @@
 		0919235B1A0BD57600538C0C /* ADweiboTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ADweiboTests-Info.plist"; sourceTree = "<group>"; };
 		0919235D1A0BD57600538C0C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0919235F1A0BD57600538C0C /* ADweiboTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADweiboTests.m; sourceTree = "<group>"; };
+		091923811A0BD77F00538C0C /* ADDiscoverTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADDiscoverTableViewController.h; sourceTree = "<group>"; };
+		091923821A0BD77F00538C0C /* ADDiscoverTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADDiscoverTableViewController.m; sourceTree = "<group>"; };
+		091923841A0BD79100538C0C /* ADHomeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADHomeTableViewController.h; sourceTree = "<group>"; };
+		091923851A0BD79100538C0C /* ADHomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADHomeTableViewController.m; sourceTree = "<group>"; };
+		091923871A0BD7A500538C0C /* ADMeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADMeTableViewController.h; sourceTree = "<group>"; };
+		091923881A0BD7A500538C0C /* ADMeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADMeTableViewController.m; sourceTree = "<group>"; };
+		0919238A1A0BD7B500538C0C /* ADMessageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADMessageTableViewController.h; sourceTree = "<group>"; };
+		0919238B1A0BD7B500538C0C /* ADMessageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADMessageTableViewController.m; sourceTree = "<group>"; };
+		0919238D1A0BDAE900538C0C /* ADTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADTabBarController.h; sourceTree = "<group>"; };
+		0919238E1A0BDAE900538C0C /* ADTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADTabBarController.m; sourceTree = "<group>"; };
+		091923911A0BDB5F00538C0C /* UIImage+AD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AD.h"; sourceTree = "<group>"; };
+		091923921A0BDB5F00538C0C /* UIImage+AD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AD.m"; sourceTree = "<group>"; };
+		09ED8BA81A0BDF9600328400 /* ADTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADTabBar.h; sourceTree = "<group>"; };
+		09ED8BA91A0BDF9600328400 /* ADTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADTabBar.m; sourceTree = "<group>"; };
+		09ED8BAB1A0BE15100328400 /* ADTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADTabBarButton.h; sourceTree = "<group>"; };
+		09ED8BAC1A0BE15100328400 /* ADTabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADTabBarButton.m; sourceTree = "<group>"; };
+		09ED8BAE1A0BEA9000328400 /* ADBadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBadgeButton.h; sourceTree = "<group>"; };
+		09ED8BAF1A0BEA9000328400 /* ADBadgeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADBadgeButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +134,7 @@
 		091923401A0BD57600538C0C /* ADweibo */ = {
 			isa = PBXGroup;
 			children = (
+				091923691A0BD62A00538C0C /* classes */,
 				091923491A0BD57600538C0C /* AppDelegate.h */,
 				0919234A1A0BD57600538C0C /* AppDelegate.m */,
 				0919234C1A0BD57600538C0C /* Images.xcassets */,
@@ -142,6 +170,175 @@
 				0919235C1A0BD57600538C0C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		091923691A0BD62A00538C0C /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				091923901A0BDB3500538C0C /* Category */,
+				0919237A1A0BD6D800538C0C /* Main */,
+				0919236E1A0BD62A00538C0C /* Home */,
+				0919236A1A0BD62A00538C0C /* Discover */,
+				091923721A0BD62A00538C0C /* Me */,
+				091923761A0BD62A00538C0C /* Message */,
+			);
+			path = classes;
+			sourceTree = "<group>";
+		};
+		0919236A1A0BD62A00538C0C /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				0919236B1A0BD62A00538C0C /* Controller */,
+				0919236C1A0BD62A00538C0C /* Model */,
+				0919236D1A0BD62A00538C0C /* View */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		0919236B1A0BD62A00538C0C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				091923811A0BD77F00538C0C /* ADDiscoverTableViewController.h */,
+				091923821A0BD77F00538C0C /* ADDiscoverTableViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0919236C1A0BD62A00538C0C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0919236D1A0BD62A00538C0C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0919236E1A0BD62A00538C0C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0919236F1A0BD62A00538C0C /* Controller */,
+				091923701A0BD62A00538C0C /* Model */,
+				091923711A0BD62A00538C0C /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		0919236F1A0BD62A00538C0C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				091923841A0BD79100538C0C /* ADHomeTableViewController.h */,
+				091923851A0BD79100538C0C /* ADHomeTableViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		091923701A0BD62A00538C0C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		091923711A0BD62A00538C0C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		091923721A0BD62A00538C0C /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				091923731A0BD62A00538C0C /* Controller */,
+				091923741A0BD62A00538C0C /* Model */,
+				091923751A0BD62A00538C0C /* View */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
+		091923731A0BD62A00538C0C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				091923871A0BD7A500538C0C /* ADMeTableViewController.h */,
+				091923881A0BD7A500538C0C /* ADMeTableViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		091923741A0BD62A00538C0C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		091923751A0BD62A00538C0C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		091923761A0BD62A00538C0C /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				091923771A0BD62A00538C0C /* Controller */,
+				091923781A0BD62A00538C0C /* Model */,
+				091923791A0BD62A00538C0C /* View */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		091923771A0BD62A00538C0C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0919238A1A0BD7B500538C0C /* ADMessageTableViewController.h */,
+				0919238B1A0BD7B500538C0C /* ADMessageTableViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		091923781A0BD62A00538C0C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		091923791A0BD62A00538C0C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0919237A1A0BD6D800538C0C /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0919238D1A0BDAE900538C0C /* ADTabBarController.h */,
+				0919238E1A0BDAE900538C0C /* ADTabBarController.m */,
+				09ED8BA81A0BDF9600328400 /* ADTabBar.h */,
+				09ED8BA91A0BDF9600328400 /* ADTabBar.m */,
+				09ED8BAB1A0BE15100328400 /* ADTabBarButton.h */,
+				09ED8BAC1A0BE15100328400 /* ADTabBarButton.m */,
+				09ED8BAE1A0BEA9000328400 /* ADBadgeButton.h */,
+				09ED8BAF1A0BEA9000328400 /* ADBadgeButton.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		091923901A0BDB3500538C0C /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				091923911A0BDB5F00538C0C /* UIImage+AD.h */,
+				091923921A0BDB5F00538C0C /* UIImage+AD.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,7 +436,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				091923931A0BDB5F00538C0C /* UIImage+AD.m in Sources */,
+				091923891A0BD7A500538C0C /* ADMeTableViewController.m in Sources */,
 				0919234B1A0BD57600538C0C /* AppDelegate.m in Sources */,
+				09ED8BAA1A0BDF9600328400 /* ADTabBar.m in Sources */,
+				09ED8BB01A0BEA9000328400 /* ADBadgeButton.m in Sources */,
+				091923861A0BD79100538C0C /* ADHomeTableViewController.m in Sources */,
+				0919238F1A0BDAE900538C0C /* ADTabBarController.m in Sources */,
+				09ED8BAD1A0BE15100328400 /* ADTabBarButton.m in Sources */,
+				0919238C1A0BD7B500538C0C /* ADMessageTableViewController.m in Sources */,
+				091923831A0BD77F00538C0C /* ADDiscoverTableViewController.m in Sources */,
 				091923471A0BD57600538C0C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,6 +566,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ADweibo/ADweibo-Prefix.pch";
 				INFOPLIST_FILE = "ADweibo/ADweibo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -373,6 +580,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ADweibo/ADweibo-Prefix.pch";
 				INFOPLIST_FILE = "ADweibo/ADweibo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -437,6 +645,7 @@
 				091923651A0BD57600538C0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		091923661A0BD57600538C0C /* Build configuration list for PBXNativeTarget "ADweiboTests" */ = {
 			isa = XCConfigurationList;
@@ -445,6 +654,7 @@
 				091923681A0BD57600538C0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
