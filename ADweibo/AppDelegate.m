@@ -11,6 +11,8 @@
 
 @implementation AppDelegate
 
+#warning revealapp在 TARGETS --> Settings --> Other Linker Flags -->添加命令 -ObjC
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     //取消隐藏状态栏

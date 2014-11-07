@@ -63,7 +63,8 @@
     self.badgeBtn.badgeValue=change[@"new"];
     CGFloat badgeButtonX=self.frame.size.width-self.badgeBtn.frame.size.width-10;
     CGFloat badgeButtonY=2;
-    self.badgeBtn.autoresizingMask=UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleBottomMargin;
+#warning 不设置好像也没事
+    //self.badgeBtn.autoresizingMask=UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleBottomMargin;
     self.badgeBtn.frame=CGRectMake(badgeButtonX, badgeButtonY, self.badgeBtn.frame.size.width, self.badgeBtn.frame.size.height);
     [self addSubview:self.badgeBtn];
 }

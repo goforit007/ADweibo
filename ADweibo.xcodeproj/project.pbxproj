@@ -25,6 +25,7 @@
 		0919238C1A0BD7B500538C0C /* ADMessageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0919238B1A0BD7B500538C0C /* ADMessageTableViewController.m */; };
 		0919238F1A0BDAE900538C0C /* ADTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0919238E1A0BDAE900538C0C /* ADTabBarController.m */; };
 		091923931A0BDB5F00538C0C /* UIImage+AD.m in Sources */ = {isa = PBXBuildFile; fileRef = 091923921A0BDB5F00538C0C /* UIImage+AD.m */; };
+		09A6CF771A0C9F840004543A /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09A6CF761A0C9F840004543A /* Reveal.framework */; };
 		09ED8BAA1A0BDF9600328400 /* ADTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ED8BA91A0BDF9600328400 /* ADTabBar.m */; };
 		09ED8BAD1A0BE15100328400 /* ADTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ED8BAC1A0BE15100328400 /* ADTabBarButton.m */; };
 		09ED8BB01A0BEA9000328400 /* ADBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ED8BAF1A0BEA9000328400 /* ADBadgeButton.m */; };
@@ -69,6 +70,7 @@
 		0919238E1A0BDAE900538C0C /* ADTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADTabBarController.m; sourceTree = "<group>"; };
 		091923911A0BDB5F00538C0C /* UIImage+AD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AD.h"; sourceTree = "<group>"; };
 		091923921A0BDB5F00538C0C /* UIImage+AD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AD.m"; sourceTree = "<group>"; };
+		09A6CF761A0C9F840004543A /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		09ED8BA81A0BDF9600328400 /* ADTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADTabBar.h; sourceTree = "<group>"; };
 		09ED8BA91A0BDF9600328400 /* ADTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADTabBar.m; sourceTree = "<group>"; };
 		09ED8BAB1A0BE15100328400 /* ADTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADTabBarButton.h; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				0919233D1A0BD57600538C0C /* CoreGraphics.framework in Frameworks */,
 				0919233F1A0BD57600538C0C /* UIKit.framework in Frameworks */,
 				0919233B1A0BD57600538C0C /* Foundation.framework in Frameworks */,
+				09A6CF771A0C9F840004543A /* Reveal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,12 +178,13 @@
 		091923691A0BD62A00538C0C /* classes */ = {
 			isa = PBXGroup;
 			children = (
-				091923901A0BDB3500538C0C /* Category */,
 				0919237A1A0BD6D800538C0C /* Main */,
 				0919236E1A0BD62A00538C0C /* Home */,
 				0919236A1A0BD62A00538C0C /* Discover */,
 				091923721A0BD62A00538C0C /* Me */,
 				091923761A0BD62A00538C0C /* Message */,
+				091923901A0BDB3500538C0C /* Category */,
+				09A6CF751A0C9F5D0004543A /* lib */,
 			);
 			path = classes;
 			sourceTree = "<group>";
@@ -339,6 +343,14 @@
 				091923921A0BDB5F00538C0C /* UIImage+AD.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		09A6CF751A0C9F5D0004543A /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				09A6CF761A0C9F840004543A /* Reveal.framework */,
+			);
+			path = lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -563,10 +575,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ADweibo/classes/lib",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ADweibo/ADweibo-Prefix.pch";
 				INFOPLIST_FILE = "ADweibo/ADweibo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -577,6 +594,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ADweibo/classes/lib",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ADweibo/ADweibo-Prefix.pch";
 				INFOPLIST_FILE = "ADweibo/ADweibo-Info.plist";
