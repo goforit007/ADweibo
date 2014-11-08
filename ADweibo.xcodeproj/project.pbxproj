@@ -28,6 +28,7 @@
 		09A299BB1A0D33560073659F /* ADSearbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A299BA1A0D33560073659F /* ADSearbar.m */; };
 		09A299C11A0D3BCD0073659F /* UIBarButtonItem+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A299C01A0D3BCD0073659F /* UIBarButtonItem+Custom.m */; };
 		09A299C81A0D3CA60073659F /* TitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A299C71A0D3CA60073659F /* TitleButton.m */; };
+		09A339961A0E0A6100A45ADF /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A339951A0E0A6100A45ADF /* WelcomeViewController.m */; };
 		09A6CF771A0C9F840004543A /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09A6CF761A0C9F840004543A /* Reveal.framework */; };
 		09A6CF7A1A0CAFE30004543A /* ADNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A6CF791A0CAFE30004543A /* ADNavigationViewController.m */; };
 		09A75D7F1A0DEDF100A5B409 /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A75D7E1A0DEDF100A5B409 /* AlertView.m */; };
@@ -81,6 +82,8 @@
 		09A299C01A0D3BCD0073659F /* UIBarButtonItem+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Custom.m"; sourceTree = "<group>"; };
 		09A299C61A0D3CA60073659F /* TitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleButton.h; sourceTree = "<group>"; };
 		09A299C71A0D3CA60073659F /* TitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleButton.m; sourceTree = "<group>"; };
+		09A339941A0E0A6100A45ADF /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
+		09A339951A0E0A6100A45ADF /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
 		09A6CF761A0C9F840004543A /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		09A6CF781A0CAFE30004543A /* ADNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADNavigationViewController.h; path = ../Home/Controller/ADNavigationViewController.h; sourceTree = "<group>"; };
 		09A6CF791A0CAFE30004543A /* ADNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ADNavigationViewController.m; path = ../Home/Controller/ADNavigationViewController.m; sourceTree = "<group>"; };
@@ -198,6 +201,7 @@
 				0919236A1A0BD62A00538C0C /* Discover */,
 				091923721A0BD62A00538C0C /* Me */,
 				091923761A0BD62A00538C0C /* Message */,
+				09A339931A0E0A0800A45ADF /* Welcome */,
 				091923901A0BDB3500538C0C /* Category */,
 				09A6CF751A0C9F5D0004543A /* lib */,
 			);
@@ -370,6 +374,15 @@
 			path = Mode;
 			sourceTree = "<group>";
 		};
+		09A339931A0E0A0800A45ADF /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				09A339941A0E0A6100A45ADF /* WelcomeViewController.h */,
+				09A339951A0E0A6100A45ADF /* WelcomeViewController.m */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
 		09A6CF751A0C9F5D0004543A /* lib */ = {
 			isa = PBXGroup;
 			children = (
@@ -486,6 +499,7 @@
 				09A6CF7A1A0CAFE30004543A /* ADNavigationViewController.m in Sources */,
 				09ED8BAD1A0BE15100328400 /* ADTabBarButton.m in Sources */,
 				0919238C1A0BD7B500538C0C /* ADMessageTableViewController.m in Sources */,
+				09A339961A0E0A6100A45ADF /* WelcomeViewController.m in Sources */,
 				091923831A0BD77F00538C0C /* ADDiscoverTableViewController.m in Sources */,
 				09A299C11A0D3BCD0073659F /* UIBarButtonItem+Custom.m in Sources */,
 				091923471A0BD57600538C0C /* main.m in Sources */,

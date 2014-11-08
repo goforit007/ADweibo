@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ADTabBarController.h"
+#import "WelcomeViewController.h"
 
 @implementation AppDelegate
 
@@ -20,7 +21,26 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    self.window.rootViewController = [[ADTabBarController alloc] init];
+    //初始化主页面
+    self.tabBarController=[[ADTabBarController alloc] init];
+    //欢迎页面显示判断 如果当前版本号和userdefault版本号一样加载主页面，否则加载欢迎界面
+    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+    NSString *lastVersion=[defaults stringForKey:@"codeVersion"];
+    NSString *nowVersion=[NSBundle mainBundle].infoDictionary[@"CFBundleVersion"];
+    if([lastVersion isEqualToString:nowVersion]){
+        self.window.rootViewController = self.tabBarController;
+    }else{
+        WelcomeViewController *welcomeCtrl=[[WelcomeViewController alloc]init];
+        self.window.rootViewController=welcomeCtrl;
+        welcomeCtrl.startBlock=^{
+            self.window.rootViewController=self.tabBarController;
+            [defaults setObject:nowVersion forKey:@"codeVersion123"];
+            [defaults synchronize];
+        };
+    }
+    
+    
+    
     return YES;
 }
 

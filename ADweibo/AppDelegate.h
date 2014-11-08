@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class ADTabBarController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property(nonatomic,strong)ADTabBarController *tabBarController;
 
 @end
