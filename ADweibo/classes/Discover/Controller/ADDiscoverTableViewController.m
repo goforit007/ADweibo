@@ -7,6 +7,8 @@
 //
 
 #import "ADDiscoverTableViewController.h"
+#import "UIImage+AD.h"
+#import "ADSearbar.h"
 
 @interface ADDiscoverTableViewController ()
 
@@ -26,12 +28,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    //设置搜索框
+    [self initSearView];
+
+}
+
+-(void)initSearView{
+    ADSearbar *searbar=[ADSearbar searBar];
+    searbar.bounds=CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.height*0.95, 30);
+    self.navigationItem.titleView=searbar;
 }
 
 - (void)didReceiveMemoryWarning

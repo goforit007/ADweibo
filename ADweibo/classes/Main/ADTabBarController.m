@@ -12,7 +12,7 @@
 #import "ADMessageTableViewController.h"
 #import "ADMeTableViewController.h"
 #import "ADDiscoverTableViewController.h"
-
+#import "ADNavigationViewController.h"
 #import "UIImage+AD.h"
 #import "ADTabBar.h"
 
@@ -39,7 +39,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     //初始化自动以tabBar
     [self initCustomTabbar];
     //初始化所有子控制器
@@ -84,7 +83,7 @@
     } else {
         childCtrl.tabBarItem.selectedImage = selectedImage;
     }
-    UINavigationController *navi=[[UINavigationController alloc] initWithRootViewController:childCtrl];
+    ADNavigationViewController *navi=[[ADNavigationViewController alloc] initWithRootViewController:childCtrl];
     [self addChildViewController:navi];
     
     //添加tabbar内部的按钮

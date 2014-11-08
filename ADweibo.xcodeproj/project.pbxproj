@@ -25,7 +25,12 @@
 		0919238C1A0BD7B500538C0C /* ADMessageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0919238B1A0BD7B500538C0C /* ADMessageTableViewController.m */; };
 		0919238F1A0BDAE900538C0C /* ADTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0919238E1A0BDAE900538C0C /* ADTabBarController.m */; };
 		091923931A0BDB5F00538C0C /* UIImage+AD.m in Sources */ = {isa = PBXBuildFile; fileRef = 091923921A0BDB5F00538C0C /* UIImage+AD.m */; };
+		09A299BB1A0D33560073659F /* ADSearbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A299BA1A0D33560073659F /* ADSearbar.m */; };
+		09A299C11A0D3BCD0073659F /* UIBarButtonItem+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A299C01A0D3BCD0073659F /* UIBarButtonItem+Custom.m */; };
+		09A299C81A0D3CA60073659F /* TitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A299C71A0D3CA60073659F /* TitleButton.m */; };
 		09A6CF771A0C9F840004543A /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09A6CF761A0C9F840004543A /* Reveal.framework */; };
+		09A6CF7A1A0CAFE30004543A /* ADNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A6CF791A0CAFE30004543A /* ADNavigationViewController.m */; };
+		09A75D7F1A0DEDF100A5B409 /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A75D7E1A0DEDF100A5B409 /* AlertView.m */; };
 		09ED8BAA1A0BDF9600328400 /* ADTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ED8BA91A0BDF9600328400 /* ADTabBar.m */; };
 		09ED8BAD1A0BE15100328400 /* ADTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ED8BAC1A0BE15100328400 /* ADTabBarButton.m */; };
 		09ED8BB01A0BEA9000328400 /* ADBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ED8BAF1A0BEA9000328400 /* ADBadgeButton.m */; };
@@ -70,7 +75,17 @@
 		0919238E1A0BDAE900538C0C /* ADTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADTabBarController.m; sourceTree = "<group>"; };
 		091923911A0BDB5F00538C0C /* UIImage+AD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AD.h"; sourceTree = "<group>"; };
 		091923921A0BDB5F00538C0C /* UIImage+AD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AD.m"; sourceTree = "<group>"; };
+		09A299B91A0D33560073659F /* ADSearbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADSearbar.h; sourceTree = "<group>"; };
+		09A299BA1A0D33560073659F /* ADSearbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADSearbar.m; sourceTree = "<group>"; };
+		09A299BF1A0D3BCD0073659F /* UIBarButtonItem+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Custom.h"; sourceTree = "<group>"; };
+		09A299C01A0D3BCD0073659F /* UIBarButtonItem+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Custom.m"; sourceTree = "<group>"; };
+		09A299C61A0D3CA60073659F /* TitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleButton.h; sourceTree = "<group>"; };
+		09A299C71A0D3CA60073659F /* TitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleButton.m; sourceTree = "<group>"; };
 		09A6CF761A0C9F840004543A /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
+		09A6CF781A0CAFE30004543A /* ADNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADNavigationViewController.h; path = ../Home/Controller/ADNavigationViewController.h; sourceTree = "<group>"; };
+		09A6CF791A0CAFE30004543A /* ADNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ADNavigationViewController.m; path = ../Home/Controller/ADNavigationViewController.m; sourceTree = "<group>"; };
+		09A75D7D1A0DEDF100A5B409 /* AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertView.h; sourceTree = "<group>"; };
+		09A75D7E1A0DEDF100A5B409 /* AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertView.m; sourceTree = "<group>"; };
 		09ED8BA81A0BDF9600328400 /* ADTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADTabBar.h; sourceTree = "<group>"; };
 		09ED8BA91A0BDF9600328400 /* ADTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADTabBar.m; sourceTree = "<group>"; };
 		09ED8BAB1A0BE15100328400 /* ADTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADTabBarButton.h; sourceTree = "<group>"; };
@@ -193,8 +208,8 @@
 			isa = PBXGroup;
 			children = (
 				0919236B1A0BD62A00538C0C /* Controller */,
-				0919236C1A0BD62A00538C0C /* Model */,
-				0919236D1A0BD62A00538C0C /* View */,
+				09A299C21A0D3C4A0073659F /* Mode */,
+				09A299C31A0D3C4A0073659F /* View */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -208,26 +223,12 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		0919236C1A0BD62A00538C0C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		0919236D1A0BD62A00538C0C /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		0919236E1A0BD62A00538C0C /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				0919236F1A0BD62A00538C0C /* Controller */,
-				091923701A0BD62A00538C0C /* Model */,
-				091923711A0BD62A00538C0C /* View */,
+				09A299C41A0D3CA60073659F /* Mode */,
+				09A299C51A0D3CA60073659F /* View */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -241,26 +242,12 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		091923701A0BD62A00538C0C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		091923711A0BD62A00538C0C /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		091923721A0BD62A00538C0C /* Me */ = {
 			isa = PBXGroup;
 			children = (
 				091923731A0BD62A00538C0C /* Controller */,
-				091923741A0BD62A00538C0C /* Model */,
-				091923751A0BD62A00538C0C /* View */,
+				09A299C91A0D3CCA0073659F /* Mode */,
+				09A299CA1A0D3CCA0073659F /* View */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -274,25 +261,11 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		091923741A0BD62A00538C0C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		091923751A0BD62A00538C0C /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		091923761A0BD62A00538C0C /* Message */ = {
 			isa = PBXGroup;
 			children = (
 				091923771A0BD62A00538C0C /* Controller */,
-				091923781A0BD62A00538C0C /* Model */,
+				09A299CB1A0D3CEC0073659F /* Mode */,
 				091923791A0BD62A00538C0C /* View */,
 			);
 			path = Message;
@@ -305,13 +278,6 @@
 				0919238B1A0BD7B500538C0C /* ADMessageTableViewController.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		091923781A0BD62A00538C0C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		091923791A0BD62A00538C0C /* View */ = {
@@ -332,6 +298,8 @@
 				09ED8BAC1A0BE15100328400 /* ADTabBarButton.m */,
 				09ED8BAE1A0BEA9000328400 /* ADBadgeButton.h */,
 				09ED8BAF1A0BEA9000328400 /* ADBadgeButton.m */,
+				09A6CF781A0CAFE30004543A /* ADNavigationViewController.h */,
+				09A6CF791A0CAFE30004543A /* ADNavigationViewController.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -341,8 +309,65 @@
 			children = (
 				091923911A0BDB5F00538C0C /* UIImage+AD.h */,
 				091923921A0BDB5F00538C0C /* UIImage+AD.m */,
+				09A299B91A0D33560073659F /* ADSearbar.h */,
+				09A299BA1A0D33560073659F /* ADSearbar.m */,
+				09A299BF1A0D3BCD0073659F /* UIBarButtonItem+Custom.h */,
+				09A299C01A0D3BCD0073659F /* UIBarButtonItem+Custom.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		09A299C21A0D3C4A0073659F /* Mode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mode;
+			sourceTree = "<group>";
+		};
+		09A299C31A0D3C4A0073659F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		09A299C41A0D3CA60073659F /* Mode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mode;
+			sourceTree = "<group>";
+		};
+		09A299C51A0D3CA60073659F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				09A299C61A0D3CA60073659F /* TitleButton.h */,
+				09A299C71A0D3CA60073659F /* TitleButton.m */,
+				09A75D7D1A0DEDF100A5B409 /* AlertView.h */,
+				09A75D7E1A0DEDF100A5B409 /* AlertView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		09A299C91A0D3CCA0073659F /* Mode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mode;
+			sourceTree = "<group>";
+		};
+		09A299CA1A0D3CCA0073659F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		09A299CB1A0D3CEC0073659F /* Mode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mode;
 			sourceTree = "<group>";
 		};
 		09A6CF751A0C9F5D0004543A /* lib */ = {
@@ -451,13 +476,18 @@
 				091923931A0BDB5F00538C0C /* UIImage+AD.m in Sources */,
 				091923891A0BD7A500538C0C /* ADMeTableViewController.m in Sources */,
 				0919234B1A0BD57600538C0C /* AppDelegate.m in Sources */,
+				09A299C81A0D3CA60073659F /* TitleButton.m in Sources */,
 				09ED8BAA1A0BDF9600328400 /* ADTabBar.m in Sources */,
 				09ED8BB01A0BEA9000328400 /* ADBadgeButton.m in Sources */,
 				091923861A0BD79100538C0C /* ADHomeTableViewController.m in Sources */,
 				0919238F1A0BDAE900538C0C /* ADTabBarController.m in Sources */,
+				09A299BB1A0D33560073659F /* ADSearbar.m in Sources */,
+				09A75D7F1A0DEDF100A5B409 /* AlertView.m in Sources */,
+				09A6CF7A1A0CAFE30004543A /* ADNavigationViewController.m in Sources */,
 				09ED8BAD1A0BE15100328400 /* ADTabBarButton.m in Sources */,
 				0919238C1A0BD7B500538C0C /* ADMessageTableViewController.m in Sources */,
 				091923831A0BD77F00538C0C /* ADDiscoverTableViewController.m in Sources */,
+				09A299C11A0D3BCD0073659F /* UIBarButtonItem+Custom.m in Sources */,
 				091923471A0BD57600538C0C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,8 +7,14 @@
 //
 
 #import "ADHomeTableViewController.h"
-int i=1;
+#import "UIImage+AD.h"
+#import "UIBarButtonItem+Custom.h"
+#import "TitleButton.h"
+#import "AlertView.h"
+
 @interface ADHomeTableViewController ()
+
+@property(nonatomic,strong)AlertView *alertView;
 
 @end
 
@@ -26,16 +32,49 @@ int i=1;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIButton *btn=[UIButton buttonWithType:UIButtonTypeContactAdd];
-    btn.frame=CGRectMake(100, 100, 50, 30);
-    [btn addTarget:self action:@selector(cc) forControlEvents:UIControlEventTouchDown];
-    [self.tableView addSubview:btn];
+    //设置barbuttonitem
+    [self initBarButtonItem];
+}
+-(void)initBarButtonItem{
+    //左边
+    self.navigationItem.leftBarButtonItem=[UIBarButtonItem initWithNormalBackgroundImage:@"navigationbar_friendsearch" HighlightedBackgroundImage:@"navigationbar_friendsearch_highlighted" Target:self action:@selector(findFriend:)];
+    //右边
+    self.navigationItem.rightBarButtonItem=[UIBarButtonItem initWithNormalBackgroundImage:@"navigationbar_pop" HighlightedBackgroundImage:@"navigationbar_pop_highlighted" Target:self action:@selector(pop:)];
+    //中间
+    TitleButton *titleBtn=[TitleButton titleButton];
+    NSString *userName=@"哈哈";
+    [titleBtn setTitle:userName forState:UIControlStateNormal];
+    CGSize valueSize=[userName sizeWithFont:titleBtn.titleLabel.font];
+    titleBtn.frame=CGRectMake(0, 0, valueSize.width+40, 30);
+    [titleBtn addTarget:self action:@selector(titleBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.titleView=titleBtn;
 }
 
--(void)cc{
-    self.tabBarItem.badgeValue=[NSString stringWithFormat:@"%d",i++];
+-(void)findFriend:(UIBarButtonItem *)item{
+    NSLog(@"findFriend");
 }
-
+-(void)pop:(UIBarButtonItem *)item{
+    NSLog(@"pop");
+}
+-(void)titleBtnClick:(TitleButton *)btn{
+    //点击中间按钮时，变换箭头方向
+    [UIView beginAnimations:nil context:nil];
+    btn.imageView.transform=CGAffineTransformRotate(btn.imageView.transform, M_PI);
+    [UIView commitAnimations];
+     //弹出框
+    if(self.alertView){
+        [self.alertView removeFromSuperview];
+        self.alertView=nil;
+        return;
+    }
+    NSArray *array=@[@"首页",@"好友圈",@"我的微博",@"周边微博",@"特别关注",@"同学",@"同事",@"家人",@"朋友",@"明星",@"其他"];
+    self.alertView=[[AlertView alloc]initWithData:array];
+    CGFloat alertW=180;
+    CGFloat alertH=280;
+    self.alertView.frame=CGRectMake([UIScreen mainScreen].bounds.size.width/2-alertW/2, 0, alertW, alertH);
+    [self.alertView resignFirstResponder];
+    [self.tableView addSubview:self.alertView];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -44,30 +83,35 @@ int i=1;
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return 2;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
+    static NSString *ID=@"cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    if (cell==nil) {
+        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+    }
+    cell.textLabel.text=@"123";
     
     return cell;
 }
-*/
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    UIViewController *ctrl=[[UIViewController alloc]init];
+    ctrl.view.backgroundColor=[UIColor grayColor];
+    
+    [self.navigationController pushViewController:ctrl animated:YES];
+
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    [self.alertView removeFromSuperview];
+    self.alertView=nil;
+}
 
 /*
 // Override to support conditional editing of the table view.
