@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ADTabBarController.h"
 #import "WelcomeViewController.h"
+#import "SinaOAuth.h"
 
 @implementation AppDelegate
 
@@ -29,19 +30,41 @@
     NSString *nowVersion=[NSBundle mainBundle].infoDictionary[@"CFBundleVersion"];
     if([lastVersion isEqualToString:nowVersion]){
         self.window.rootViewController = self.tabBarController;
+        //判断登陆状态,没有登陆的话进行登录
+        [self oauth];
     }else{
         WelcomeViewController *welcomeCtrl=[[WelcomeViewController alloc]init];
         self.window.rootViewController=welcomeCtrl;
         welcomeCtrl.startBlock=^{
             self.window.rootViewController=self.tabBarController;
-            [defaults setObject:nowVersion forKey:@"codeVersion123"];
+            //判断登陆状态,没有登陆的话进行登录
+            [self oauth];
+            [defaults setObject:nowVersion forKey:@"codeVersion"];
             [defaults synchronize];
         };
     }
-    
-    
-    
     return YES;
+}
+
+-(void)oauth{
+    SinaOAuth *oauth=[SinaOAuth oauth];
+    [oauth loginWith:kAppKey];
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    return [WeiboSDK handleOpenURL:url delegate:self];
+}
+#pragma mark - 处理微博客户端程序通过URL启动第三方应用时传递的数据
+- (void)didReceiveWeiboRequest:(WBBaseRequest *)request{
+    NSLog(@"收到客户端request：%@",request);
+}
+- (void)didReceiveWeiboResponse:(WBBaseResponse *)response{
+    NSString *accessToken=[(WBAuthorizeResponse *)response accessToken];
+    [[NSUserDefaults standardUserDefaults] setObject:accessToken forKey:kAccessToken];
+    SinaOAuth *oauth=[SinaOAuth oauth];
+    oauth.token=accessToken;
+    NSLog(@"收到客户端response状态:%d------token:%@",response.statusCode,accessToken);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 @class ADTabBarController;
+#import "WeiboSDK.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate,WeiboSDKDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property(nonatomic,strong)ADTabBarController *tabBarController;

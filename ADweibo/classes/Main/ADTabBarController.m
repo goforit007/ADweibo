@@ -43,6 +43,7 @@
     [self initCustomTabbar];
     //初始化所有子控制器
     [self initAllChildViewControll];
+
 }
 //viw即将显示的时候，删除系统自带的tabBarItem
 -(void)viewWillAppear:(BOOL)animated{
