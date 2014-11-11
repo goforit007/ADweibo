@@ -42,7 +42,6 @@ static SinaOAuth *oauth=nil;
 
 -(void)loginWith:(NSString *)appKey{
     [WeiboSDK enableDebugMode:YES];
-    self.token=[[NSUserDefaults standardUserDefaults] stringForKey:kAccessToken];
     if(self.token){
         return;
     }else{
@@ -51,8 +50,12 @@ static SinaOAuth *oauth=nil;
         request.redirectURI=kRedirectURI;
         [WeiboSDK sendRequest:request];
     }
-
 }
+- (NSString *)token{
+    _token=[[NSUserDefaults standardUserDefaults] stringForKey:kAccessToken];
+    return _token;
+}
+
 @end
 
 

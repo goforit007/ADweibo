@@ -10,6 +10,7 @@
 #import "ADTabBarController.h"
 #import "WelcomeViewController.h"
 #import "SinaOAuth.h"
+#import "OAuthViewControllViewController.h"
 
 @implementation AppDelegate
 
@@ -29,14 +30,12 @@
     NSString *lastVersion=[defaults stringForKey:@"codeVersion"];
     NSString *nowVersion=[NSBundle mainBundle].infoDictionary[@"CFBundleVersion"];
     if([lastVersion isEqualToString:nowVersion]){
-        self.window.rootViewController = self.tabBarController;
         //判断登陆状态,没有登陆的话进行登录
         [self oauth];
     }else{
         WelcomeViewController *welcomeCtrl=[[WelcomeViewController alloc]init];
         self.window.rootViewController=welcomeCtrl;
         welcomeCtrl.startBlock=^{
-            self.window.rootViewController=self.tabBarController;
             //判断登陆状态,没有登陆的话进行登录
             [self oauth];
             [defaults setObject:nowVersion forKey:@"codeVersion"];
@@ -48,7 +47,14 @@
 
 -(void)oauth{
     SinaOAuth *oauth=[SinaOAuth oauth];
-    [oauth loginWith:kAppKey];
+    //如果储存的有token直接加载tabBarController
+    if(oauth.token){
+        self.window.rootViewController=self.tabBarController;
+        return;
+    }
+    //没有储存的token进入授权控制器，然后等拿到Response再加载tabBarController
+    OAuthViewControllViewController *oauthCtrl=[[OAuthViewControllViewController alloc]init];
+    self.window.rootViewController=oauthCtrl;
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
@@ -60,38 +66,13 @@
     NSLog(@"收到客户端request：%@",request);
 }
 - (void)didReceiveWeiboResponse:(WBBaseResponse *)response{
-    NSString *accessToken=[(WBAuthorizeResponse *)response accessToken];
-    [[NSUserDefaults standardUserDefaults] setObject:accessToken forKey:kAccessToken];
-    SinaOAuth *oauth=[SinaOAuth oauth];
-    oauth.token=accessToken;
-    NSLog(@"收到客户端response状态:%d------token:%@",response.statusCode,accessToken);
+    NSString *Token=[(WBAuthorizeResponse *)response accessToken];
+    [[NSUserDefaults standardUserDefaults] setObject:Token forKey:kAccessToken];
+    NSLog(@"收到客户端response------token:%@",Token);
+    //收到token再把tabBarController设置进去
+    self.window.rootViewController=self.tabBarController;
 }
 
-- (void)applicationWillResignActive:(UIApplication *)application
-{
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-}
 
-- (void)applicationDidEnterBackground:(UIApplication *)application
-{
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-}
-
-- (void)applicationWillEnterForeground:(UIApplication *)application
-{
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application
-{
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-}
 
 @end

@@ -11,10 +11,18 @@
 #import "UIBarButtonItem+Custom.h"
 #import "TitleButton.h"
 #import "AlertView.h"
+#import "WeiboSDK.h"
+#import "WeiboModel.h"
+#import "WeiboFrameModel.h"
+#import "UserModel.h"
+#import "MJExtension.h"
+#import "SinaOAuth.h"
+#import "WeiboCell.h"
 
-@interface ADHomeTableViewController ()
+@interface ADHomeTableViewController ()<WBHttpRequestDelegate>
 
 @property(nonatomic,strong)AlertView *alertView;
+@property(nonatomic,strong)NSMutableArray *weiboFrames;
 
 @end
 
@@ -24,9 +32,19 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        
+        self.tableView.backgroundColor=[UIColor colorWithRed:226/255.0 green:226/255.0 blue:226/255.0 alpha:1];
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        //因为cellY值都增加了kTableBorder，相应的要增加tableview的滚动范围
+        self.tableView.contentInset=UIEdgeInsetsMake(0, 0, kTableBorder, 0);
     }
     return self;
+}
+
+- (NSMutableArray *)weiboFrames{
+    if (_weiboFrames==nil) {
+        _weiboFrames=[NSMutableArray arrayWithCapacity:20];
+    }
+    return _weiboFrames;
 }
 
 - (void)viewDidLoad
@@ -34,6 +52,8 @@
     [super viewDidLoad];
     //设置barbuttonitem
     [self initBarButtonItem];
+    //请求微博数据
+    [self loadWeibo];
 }
 -(void)initBarButtonItem{
     //左边
@@ -71,44 +91,58 @@
     self.alertView=[[AlertView alloc]initWithData:array];
     CGFloat alertW=180;
     CGFloat alertH=280;
-    self.alertView.frame=CGRectMake([UIScreen mainScreen].bounds.size.width/2-alertW/2, 0, alertW, alertH);
-    [self.alertView resignFirstResponder];
-    [self.tableView addSubview:self.alertView];
-}
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    self.alertView.frame=CGRectMake([UIScreen mainScreen].bounds.size.width/2-alertW/2, 65, alertW, alertH);
+    [self.navigationController.view addSubview:self.alertView];
 }
 
+-(void)loadWeibo{
+    SinaOAuth *oauth=[SinaOAuth oauth];
+    [WBHttpRequest requestWithURL:@"https://api.weibo.com/2/statuses/friends_timeline.json" httpMethod:@"GET" params:@{@"access_token":oauth.token} delegate:self withTag:@"friends_timeline"];
+}
+- (void)request:(WBHttpRequest *)request didFinishLoadingWithDataResult:(NSData *)data;{
+    NSDictionary *dict=[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    NSArray *dictArray=dict[@"statuses"];
+    for (NSDictionary *dict in dictArray) {
+        WeiboModel *weibo=[WeiboModel objectWithKeyValues:dict];
+        WeiboFrameModel *frame=[[WeiboFrameModel alloc]init];
+        frame.weibo=weibo;
+        [self.weiboFrames addObject:frame];
+    }
+    [self.tableView reloadData];
+}
+- (void)request:(WBHttpRequest *)request didFailWithError:(NSError *)error{
+    NSLog(@"home请求错误");
+}
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return self.weiboFrames.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *ID=@"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    WeiboCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (cell==nil) {
-        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+        cell=[[WeiboCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
     }
-    cell.textLabel.text=@"123";
-    
+    WeiboFrameModel *weiboFrame=self.weiboFrames[indexPath.row];
+    cell.weiboFrame=weiboFrame;
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    UIViewController *ctrl=[[UIViewController alloc]init];
+    /*UIViewController *ctrl=[[UIViewController alloc]init];
     ctrl.view.backgroundColor=[UIColor grayColor];
-    
-    [self.navigationController pushViewController:ctrl animated:YES];
-
+    [self.navigationController pushViewController:ctrl animated:YES];*/
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPat{
+    WeiboFrameModel *weiboFrame=self.weiboFrames[indexPat.row];
+    return weiboFrame.cellH;
+}
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
     [self.alertView removeFromSuperview];
     self.alertView=nil;
 }
