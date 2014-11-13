@@ -10,10 +10,10 @@
 
 @interface UIView (frameExtension)
 
-@property(nonatomic,assign)int X;
-@property(nonatomic,assign)int Y;
-@property(nonatomic,assign)int width;
-@property(nonatomic,assign)int height;
+@property(nonatomic,assign)CGFloat X;
+@property(nonatomic,assign)CGFloat Y;
+@property(nonatomic,assign)CGFloat width;
+@property(nonatomic,assign)CGFloat height;
 
 
 @end

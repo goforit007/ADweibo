@@ -53,15 +53,15 @@
 /**
  *  转发数
  */
-@property(nonatomic,copy)NSString *reposts_count;
+@property(nonatomic,copy)NSNumber *reposts_count;
 /**
  *  评论数
  */
-@property(nonatomic,copy)NSString *comments_count;
+@property(nonatomic,copy)NSNumber *comments_count;
 /**
  *  表态数
  */
-@property(nonatomic,copy)NSString *attitudes_count;
+@property(nonatomic,copy)NSNumber *attitudes_count;
 /**
  *  微博来源
  */

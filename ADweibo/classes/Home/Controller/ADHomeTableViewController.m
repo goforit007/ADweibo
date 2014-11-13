@@ -24,6 +24,7 @@
 @property(nonatomic,strong)AlertView *alertView;
 @property(nonatomic,strong)NSMutableArray *weiboFrames;
 
+
 @end
 
 @implementation ADHomeTableViewController
@@ -101,12 +102,15 @@
 }
 - (void)request:(WBHttpRequest *)request didFinishLoadingWithDataResult:(NSData *)data;{
     NSDictionary *dict=[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    NSLog(@"收到请求微博回应");
     NSArray *dictArray=dict[@"statuses"];
     for (NSDictionary *dict in dictArray) {
         WeiboModel *weibo=[WeiboModel objectWithKeyValues:dict];
         WeiboFrameModel *frame=[[WeiboFrameModel alloc]init];
         frame.weibo=weibo;
         [self.weiboFrames addObject:frame];
+        NSLog(@"%@",weibo.user.name);
+        NSLog(@"%@",weibo.pic_urls);
     }
     [self.tableView reloadData];
 }

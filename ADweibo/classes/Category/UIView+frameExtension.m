@@ -10,39 +10,39 @@
 
 @implementation UIView (frameExtension)
 
-- (void)setX:(int)X{
+- (void)setX:(CGFloat)X{
     CGRect frame=self.frame;
     frame.origin.x=X;
     self.frame=frame;
 }
-- (int)X{
+- (CGFloat)X{
     return self.frame.origin.x;
 }
 
-- (void)setY:(int)Y{
+- (void)setY:(CGFloat)Y{
     CGRect frame=self.frame;
     frame.origin.y=Y;
     self.frame=frame;
 }
-- (int)Y{
+- (CGFloat)Y{
     return self.frame.origin.y;
 }
 
-- (void)setWidth:(int)width{
+- (void)setWidth:(CGFloat)width{
     CGRect frame=self.frame;
     frame.size.width=width;
     self.frame=frame;
 }
-- (int)width{
+- (CGFloat)width{
     return self.frame.size.width;
 }
 
-- (void)setHeight:(int)height{
+- (void)setHeight:(CGFloat)height{
     CGRect frame=self.frame;
     frame.size.height=height;
     self.frame=frame;
 }
-- (int)height{
+- (CGFloat)height{
     return self.frame.size.height;
 }
 

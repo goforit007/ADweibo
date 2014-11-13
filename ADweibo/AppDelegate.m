@@ -16,6 +16,14 @@
 
 #warning revealapp在 TARGETS --> Settings --> Other Linker Flags -->添加命令 -ObjC
 
+- (ADTabBarController *)tabBarController{
+    if (_tabBarController==nil) {
+        //初始化主页面
+        self.tabBarController=[[ADTabBarController alloc] init];
+    }
+    return _tabBarController;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     //取消隐藏状态栏
@@ -23,8 +31,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    //初始化主页面
-    self.tabBarController=[[ADTabBarController alloc] init];
+
     //欢迎页面显示判断 如果当前版本号和userdefault版本号一样加载主页面，否则加载欢迎界面
     NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
     NSString *lastVersion=[defaults stringForKey:@"codeVersion"];

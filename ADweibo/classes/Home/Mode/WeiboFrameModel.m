@@ -35,14 +35,13 @@
     CGFloat NameLabelW=nameSize.width;
     CGFloat NameLabelH=nameSize.height;
     _weiboNameLabelFrame=CGRectMake(NameLabelX,NameLabelY, NameLabelW, NameLabelH);
-    
     //时间
     CGFloat TimeLabelX=NameLabelX;
     CGFloat TimeLabelY=CGRectGetMaxY(_weiboNameLabelFrame)+kWeiboCellBorder;
     CGSize timeSize=[_weibo.created_at sizeWithFont:kTImeUIFont];
-    CGFloat TimeLabelW=timeSize.width;
+    //CGFloat TimeLabelW=timeSize.width;
     CGFloat TimeLabelH=timeSize.height;
-    _weiboTimeLabelFrame=CGRectMake(TimeLabelX,TimeLabelY, TimeLabelW, TimeLabelH);
+    _weiboTimeLabelFrame=CGRectMake(TimeLabelX,TimeLabelY, 50, TimeLabelH);
     //来源
     CGFloat SourceLabelX=CGRectGetMaxX(_weiboTimeLabelFrame)+kWeiboCellBorder;
     CGFloat SourceLabelY=TimeLabelY;

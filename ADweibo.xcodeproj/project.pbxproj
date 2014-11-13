@@ -47,6 +47,8 @@
 		099A12E81A0F585E008B5707 /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 099A12E51A0F585E008B5707 /* libWeiboSDK.a */; };
 		099A12E91A0F585E008B5707 /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 099A12E61A0F585E008B5707 /* WeiboSDK.bundle */; };
 		099A12EC1A0F5AD6008B5707 /* SinaOAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 099A12EB1A0F5AD6008B5707 /* SinaOAuth.m */; };
+		09A2152C1A133E320048C5B7 /* ADWeiboToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A2152B1A133E320048C5B7 /* ADWeiboToolBar.m */; };
+		09A2152F1A135F7C0048C5B7 /* ADWeiboView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A2152E1A135F7C0048C5B7 /* ADWeiboView.m */; };
 		09A299BB1A0D33560073659F /* ADSearbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A299BA1A0D33560073659F /* ADSearbar.m */; };
 		09A299C11A0D3BCD0073659F /* UIBarButtonItem+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A299C01A0D3BCD0073659F /* UIBarButtonItem+Custom.m */; };
 		09A299C81A0D3CA60073659F /* TitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A299C71A0D3CA60073659F /* TitleButton.m */; };
@@ -155,6 +157,10 @@
 		099A12E71A0F585E008B5707 /* WeiboSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboSDK.h; sourceTree = "<group>"; };
 		099A12EA1A0F5AD6008B5707 /* SinaOAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaOAuth.h; sourceTree = "<group>"; };
 		099A12EB1A0F5AD6008B5707 /* SinaOAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinaOAuth.m; sourceTree = "<group>"; };
+		09A2152A1A133E320048C5B7 /* ADWeiboToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADWeiboToolBar.h; sourceTree = "<group>"; };
+		09A2152B1A133E320048C5B7 /* ADWeiboToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADWeiboToolBar.m; sourceTree = "<group>"; };
+		09A2152D1A135F7C0048C5B7 /* ADWeiboView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADWeiboView.h; sourceTree = "<group>"; };
+		09A2152E1A135F7C0048C5B7 /* ADWeiboView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADWeiboView.m; sourceTree = "<group>"; };
 		09A299B91A0D33560073659F /* ADSearbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADSearbar.h; sourceTree = "<group>"; };
 		09A299BA1A0D33560073659F /* ADSearbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADSearbar.m; sourceTree = "<group>"; };
 		09A299BF1A0D3BCD0073659F /* UIBarButtonItem+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Custom.h"; sourceTree = "<group>"; };
@@ -522,6 +528,10 @@
 				09A75D7E1A0DEDF100A5B409 /* AlertView.m */,
 				099818451A10908500530EA1 /* WeiboCell.h */,
 				099818461A10908500530EA1 /* WeiboCell.m */,
+				09A2152D1A135F7C0048C5B7 /* ADWeiboView.h */,
+				09A2152E1A135F7C0048C5B7 /* ADWeiboView.m */,
+				09A2152A1A133E320048C5B7 /* ADWeiboToolBar.h */,
+				09A2152B1A133E320048C5B7 /* ADWeiboToolBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -693,6 +703,7 @@
 				091923931A0BDB5F00538C0C /* UIImage+AD.m in Sources */,
 				091923891A0BD7A500538C0C /* ADMeTableViewController.m in Sources */,
 				0998183D1A108F6E00530EA1 /* SDWebImagePrefetcher.m in Sources */,
+				09A2152C1A133E320048C5B7 /* ADWeiboToolBar.m in Sources */,
 				09B03B301A0FBC86009D11DF /* OAuthViewControllViewController.m in Sources */,
 				0998183B1A108F6E00530EA1 /* SDWebImageDownloaderOperation.m in Sources */,
 				09A39B3E1A120FD900FDE62F /* UIView+frameExtension.m in Sources */,
@@ -734,6 +745,7 @@
 				09A339961A0E0A6100A45ADF /* WelcomeViewController.m in Sources */,
 				099818361A108F6E00530EA1 /* NSData+ImageContentType.m in Sources */,
 				091923831A0BD77F00538C0C /* ADDiscoverTableViewController.m in Sources */,
+				09A2152F1A135F7C0048C5B7 /* ADWeiboView.m in Sources */,
 				09C5BF361A0FDBD200271AAA /* NSObject+MJKeyValue.m in Sources */,
 				09A299C11A0D3BCD0073659F /* UIBarButtonItem+Custom.m in Sources */,
 				0998183E1A108F6E00530EA1 /* UIButton+WebCache.m in Sources */,
