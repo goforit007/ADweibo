@@ -56,8 +56,13 @@
 }
 //按钮被点击
 -(void)btnClick:(ADTabBarButton *)btn{
-    //按钮被点击时，吧按钮tag记录进block里面，以供控制器使用 
-    self.btnClickBlock(btn.tag);
+    //重复点击的话传递yes刷新数据
+    if(btn==self.selectBtn){
+        self.btnClickBlock(btn.tag,YES);
+    }else{
+        //按钮被点击时，吧按钮tag记录进block里面，以供控制器使用
+        self.btnClickBlock(btn.tag,NO);
+    }
     self.selectBtn.selected=NO;
     btn.selected=YES;
     self.selectBtn=btn;

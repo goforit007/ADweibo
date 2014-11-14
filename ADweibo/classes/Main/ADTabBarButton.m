@@ -61,10 +61,10 @@
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
     // 设置提醒数字
     self.badgeBtn.badgeValue=change[@"new"];
+    //因为badgeValue会改变，所以宽高不确定，所以需要设置autoresizingMask限制边距，等有宽高的时候自东修改位置
     CGFloat badgeButtonX=self.frame.size.width-self.badgeBtn.frame.size.width-10;
     CGFloat badgeButtonY=2;
-#warning 不设置好像也没事
-    //self.badgeBtn.autoresizingMask=UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleBottomMargin;
+    self.badgeBtn.autoresizingMask=UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleBottomMargin;
     self.badgeBtn.frame=CGRectMake(badgeButtonX, badgeButtonY, self.badgeBtn.frame.size.width, self.badgeBtn.frame.size.height);
     [self addSubview:self.badgeBtn];
 }

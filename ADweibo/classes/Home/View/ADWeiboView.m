@@ -16,6 +16,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.userInteractionEnabled=YES;
         //初始化原创微博View
         [self initWeiboViews];
         //初始化转发微博View
@@ -37,6 +38,7 @@
 -(void)initWeiboViews{
     //1.微博大背景
     self.weiboBGImageView=[[UIImageView alloc]init];
+    self.weiboBGImageView.userInteractionEnabled=YES;
     UIImage *img=[UIImage imageWithName:@"timeline_card_top_background"];
     self.weiboBGImageView.image=[img stretchableImageWithLeftCapWidth:img.size.width/2 topCapHeight:img.size.height/2];
     
@@ -60,7 +62,7 @@
     self.weiboTextLabel=[[UILabel alloc]init];
     [self.weiboBGImageView addSubview:self.weiboTextLabel];
     //7.图片
-    self.weiboPhotoImageView=[[UIImageView alloc]init];
+    self.weiboPhotoImageView=[[ADWeiboPhptoView alloc]init];
     [self.weiboBGImageView addSubview:self.weiboPhotoImageView];
 }
 //初始化转发微博控件
@@ -83,7 +85,7 @@
     self.retweiboTextLabel=[[UILabel alloc]init];
     [self.retWeiboBGImageView addSubview:self.retweiboTextLabel];
     //4.图片
-    self.retweiboPhotoImageView=[[UIImageView alloc]init];
+    self.retweiboPhotoImageView=[[ADWeiboPhptoView alloc]init];
     [self.retWeiboBGImageView addSubview:self.retweiboPhotoImageView];
 }
 
@@ -106,8 +108,7 @@
     self.weiboTextLabel.font=kTTextUIFont;
     self.weiboTextLabel.text=_weiboFrameModel.weibo.text;
     
-    NSURL *photoUrl=[NSURL URLWithString:_weiboFrameModel.weibo.thumbnail_pic];
-    [self.weiboPhotoImageView sd_setImageWithURL:photoUrl placeholderImage:[UIImage imageNamed:@"close"]];
+    self.weiboPhotoImageView.photos=_weiboFrameModel.weibo.pic_urls;
 }
 -(void)setRetWeiboViewsData{
     //1.转发微博的背景
@@ -121,8 +122,7 @@
     self.retweiboTextLabel.font=kRetTextUIFont;
     self.retweiboTextLabel.text=self.weiboFrameModel.weibo.retweeted_status.text;
     //4.图片
-    NSURL *url=[NSURL URLWithString:self.weiboFrameModel.weibo.retweeted_status.thumbnail_pic];
-    [self.retweiboPhotoImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"close"]];
+    self.retweiboPhotoImageView.photos=_weiboFrameModel.weibo.retweeted_status.pic_urls;
 }
 - (void)layoutSubviews{
     [super layoutSubviews];

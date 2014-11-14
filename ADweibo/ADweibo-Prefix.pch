@@ -24,7 +24,7 @@
 #define IWColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 //新浪认证相关
 #define kAppKey @"3719115697"
-#define kAppSecret @"b9ec6f8b31603d69205195d17eff5929"
+#define kUserID @"userID"
 #define kRedirectURI @"www.baidu.com"
 
 #define kAccessToken @"accessToken"

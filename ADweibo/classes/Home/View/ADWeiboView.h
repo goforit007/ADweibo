@@ -11,6 +11,7 @@
 #import "WeiboModel.h"
 #import "UserModel.h"
 #import "WeiboFrameModel.h"
+#import "ADWeiboPhptoView.h"
 
 @interface ADWeiboView : UIView
 
@@ -23,11 +24,11 @@
 @property(nonatomic,strong)UILabel *weiboTimeLabel;
 @property(nonatomic,strong)UILabel *weiboSourceLabel;
 @property(nonatomic,strong)UILabel *weiboTextLabel;
-@property(nonatomic,strong)UIImageView *weiboPhotoImageView;
+@property(nonatomic,strong)ADWeiboPhptoView *weiboPhotoImageView;
 //被转发微博控件
 @property(nonatomic,strong)UIImageView *retWeiboBGImageView;
 @property(nonatomic,strong)UILabel *retweiboNameLabel;
 @property(nonatomic,strong)UILabel *retweiboTextLabel;
-@property(nonatomic,strong)UIImageView *retweiboPhotoImageView;
+@property(nonatomic,strong)ADWeiboPhptoView *retweiboPhotoImageView;
 
 @end

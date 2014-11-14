@@ -23,6 +23,9 @@
 #define kRetTextUIFont [UIFont systemFontOfSize:15]
 //表格的边框宽度
 #define kTableBorder 10
+//配图的宽高
+#define kWeiboPhontSize 70
+#define kWeiboPhontPadding 10
 
 @interface WeiboFrameModel : NSObject
 

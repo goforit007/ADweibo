@@ -10,4 +10,7 @@
 
 @interface ADHomeTableViewController : UITableViewController
 
+//重读点击时的下拉刷新
+-(void)clickAgain;
+
 @end

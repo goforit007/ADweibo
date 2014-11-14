@@ -37,6 +37,12 @@
     CGSize valueSize=[badgeValue sizeWithFont:self.titleLabel.font];
     CGFloat W=valueSize.width+10;
     CGFloat H=self.BackgroundImg.size.height;
+    //如果badgeValue是0的话不需要提醒，隐藏掉
+    if ([badgeValue isEqualToString:@"0"]) {
+        self.hidden=YES;
+    }else{
+        self.hidden=NO;
+    }
     self.bounds=CGRectMake(0, 0, W, H);
 }
 

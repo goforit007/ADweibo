@@ -41,7 +41,7 @@
     CGSize timeSize=[_weibo.created_at sizeWithFont:kTImeUIFont];
     //CGFloat TimeLabelW=timeSize.width;
     CGFloat TimeLabelH=timeSize.height;
-    _weiboTimeLabelFrame=CGRectMake(TimeLabelX,TimeLabelY, 50, TimeLabelH);
+    _weiboTimeLabelFrame=CGRectMake(TimeLabelX,TimeLabelY, 60, TimeLabelH);
     //来源
     CGFloat SourceLabelX=CGRectGetMaxX(_weiboTimeLabelFrame)+kWeiboCellBorder;
     CGFloat SourceLabelY=TimeLabelY;
@@ -59,12 +59,26 @@
     _weiboTextLabelFrame=CGRectMake(TextLabelX, TextLabelY, TextLabelW, TextLabelH);
     
     //图片
-    if(weibo.thumbnail_pic){
+    if(weibo.pic_urls.count){
         CGFloat photoImageX=kWeiboCellBorder;
         CGFloat photoImageY=CGRectGetMaxY(_weiboTextLabelFrame)+kWeiboCellBorder;
-        CGFloat photoImageW=100;
-        CGFloat photoImageH=100;
-        _weiboPhotoImageFrame=CGRectMake(photoImageX, photoImageY, photoImageW, photoImageH);
+        //每张图片的宽高
+        CGFloat ImageW=kWeiboPhontSize;
+        CGFloat ImageH=kWeiboPhontSize;
+        //每张图片的间距
+        CGFloat Padding=kWeiboPhontPadding;
+        //每排图片的数量
+        int clos=(int)weibo.pic_urls.count>3?3:weibo.pic_urls.count;
+        //有几排
+        int rows=(int)weibo.pic_urls.count/3;
+        if(weibo.pic_urls.count%3!=0){
+            rows++;
+        }
+        
+        CGFloat W=clos*ImageW+Padding*(clos-1);
+        CGFloat H=rows*ImageH+Padding*(rows-1);
+        
+        _weiboPhotoImageFrame=CGRectMake(photoImageX, photoImageY, W, H);
     }else{
         _weiboPhotoImageFrame=CGRectMake(0,CGRectGetMaxY(_weiboTextLabelFrame),0,0);
     }
@@ -91,12 +105,25 @@
         CGFloat TextLabelH=TextSize.height;
         _retweiboTextLabelFrame=CGRectMake(TextLabelX, TextLabelY, TextLabelW, TextLabelH);
         //图片
-        if(weibo.retweeted_status.thumbnail_pic){
+        if(weibo.retweeted_status.pic_urls.count){
             CGFloat retphotoImageX=kWeiboCellBorder;
             CGFloat retphotoImageY=CGRectGetMaxY(_retweiboTextLabelFrame)+kWeiboCellBorder;
-            CGFloat retphotoImageW=100;
-            CGFloat retphotoImageH=100;
-            _retweiboPhotoImageFrame=CGRectMake(retphotoImageX, retphotoImageY, retphotoImageW, retphotoImageH);
+            //每张图片的宽高
+            CGFloat ImageW=kWeiboPhontSize;
+            CGFloat ImageH=kWeiboPhontSize;
+            //每张图片的间距
+            CGFloat Padding=kWeiboPhontPadding;
+            //每排图片的数量
+            int clos=weibo.retweeted_status.pic_urls.count>3?3:weibo.retweeted_status.pic_urls.count;
+            //有几排
+            int rows=weibo.retweeted_status.pic_urls.count/3;
+            if(weibo.retweeted_status.pic_urls.count%3!=0){
+                rows++;
+            }
+            
+            CGFloat W=clos*ImageW+Padding*(clos-1);
+            CGFloat H=rows*ImageH+Padding*(rows-1);
+            _retweiboPhotoImageFrame=CGRectMake(retphotoImageX, retphotoImageY, W, H);
             /**
              *  有转发，并且有图片
              */

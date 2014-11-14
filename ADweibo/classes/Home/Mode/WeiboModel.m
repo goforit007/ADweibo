@@ -18,6 +18,8 @@
     // 1.获得微博的发送时间
     NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
     fmt.dateFormat = @"EEE MMM dd HH:mm:ss Z yyyy";
+    fmt.locale=[[NSLocale alloc]initWithLocaleIdentifier:@"en_US"];
+    //真机这里createdDate为空 必须设置时区为en_US  告诉真机这个时间格式是en_US得
     NSDate *createdDate = [fmt dateFromString:_created_at];
     
     // 2..判断微博发送时间 和 现在时间 的差距
@@ -42,11 +44,15 @@
 }
 //修改来源格式
 - (void)setSource:(NSString *)source{
+    _source=source;
+    if(_source.length){
+        int startLoc=[source rangeOfString:@">"].location+1;
+        int endLoc=[source rangeOfString:@"</"].location-startLoc;
+        NSString *newSource=[source substringWithRange:NSMakeRange(startLoc, endLoc)];
+        _source=[NSString stringWithFormat:@"来自:%@",newSource];
+    }
+    
     //<a href="http://app.weibo.com/t/feed/5g0B8s" rel="nofollow">微博 weibo.com</a>
-    int startLoc=[source rangeOfString:@">"].location+1;
-    int endLoc=[source rangeOfString:@"</"].location-startLoc;
-    NSString *newSource=[source substringWithRange:NSMakeRange(startLoc, endLoc)];
-    _source=[NSString stringWithFormat:@"来自:%@",newSource];
 }
 
 //修改转发微博@

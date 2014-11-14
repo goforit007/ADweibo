@@ -46,7 +46,11 @@
     CGFloat imageH=self.scrollView.frame.size.height;
     for(int i=0;i<pageNum;i++){
         UIImageView *imageView=[[UIImageView alloc]init];
+        //LaunchImage才会自动加载568图片，这里的需要自己加载
         NSString *imageName=[NSString stringWithFormat:@"new_feature_%i",i+1];
+        if([UIScreen mainScreen].bounds.size.height==568){
+            imageName=[NSString stringWithFormat:@"%@-568h@2x",imageName];
+        }
         imageView.image=[UIImage imageNamed:imageName];
         imageView.frame=CGRectMake(i*imageW,0 , imageW, imageH);
         //最后一个界面需要添加几个按钮

@@ -10,7 +10,7 @@
 
 @interface ADTabBar : UIView
 
-@property(nonatomic,copy)void (^btnClickBlock)(int);
+@property(nonatomic,copy)void (^btnClickBlock)(int,BOOL);
 -(void)addTabBarButtonWithItem:(UITabBarItem *)item;
 
 @end

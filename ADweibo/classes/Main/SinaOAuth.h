@@ -11,6 +11,7 @@
 @interface SinaOAuth : NSObject
 
 @property(nonatomic,copy)NSString *token;
+@property(nonatomic,copy)NSString *userID;
 
 +(id)oauth;
 -(void)loginWith:(NSString *)appKey;

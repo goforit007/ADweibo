@@ -74,6 +74,8 @@
 }
 - (void)didReceiveWeiboResponse:(WBBaseResponse *)response{
     NSString *Token=[(WBAuthorizeResponse *)response accessToken];
+    NSString *userID=[(WBAuthorizeResponse *)response userID];
+    [[NSUserDefaults standardUserDefaults] setObject:userID forKey:kUserID];
     [[NSUserDefaults standardUserDefaults] setObject:Token forKey:kAccessToken];
     NSLog(@"收到客户端response------token:%@",Token);
     //收到token再把tabBarController设置进去
