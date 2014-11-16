@@ -65,6 +65,8 @@
 		09A299C81A0D3CA60073659F /* TitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A299C71A0D3CA60073659F /* TitleButton.m */; };
 		09A339961A0E0A6100A45ADF /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A339951A0E0A6100A45ADF /* WelcomeViewController.m */; };
 		09A39B3E1A120FD900FDE62F /* UIView+frameExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A39B3D1A120FD900FDE62F /* UIView+frameExtension.m */; };
+		09A47DAE1A1745CD00617B18 /* SendWeiboViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A47DAD1A1745CD00617B18 /* SendWeiboViewController.m */; };
+		09A47DB41A1763D900617B18 /* SendToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A47DB31A1763D900617B18 /* SendToolBar.m */; };
 		09A6AFFE1A1487E0006EC2B4 /* ADWeiboPhptoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A6AFFD1A1487E0006EC2B4 /* ADWeiboPhptoView.m */; };
 		09A6B00D1A14C074006EC2B4 /* MJPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A6B0011A14C074006EC2B4 /* MJPhoto.m */; };
 		09A6B00E1A14C074006EC2B4 /* MJPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 09A6B0021A14C074006EC2B4 /* MJPhotoBrowser.bundle */; };
@@ -214,6 +216,11 @@
 		09A339951A0E0A6100A45ADF /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
 		09A39B3C1A120FD900FDE62F /* UIView+frameExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+frameExtension.h"; sourceTree = "<group>"; };
 		09A39B3D1A120FD900FDE62F /* UIView+frameExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+frameExtension.m"; sourceTree = "<group>"; };
+		09A47DAA1A173FBE00617B18 /* ADWeiboDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADWeiboDefine.h; sourceTree = "<group>"; };
+		09A47DAC1A1745CD00617B18 /* SendWeiboViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendWeiboViewController.h; sourceTree = "<group>"; };
+		09A47DAD1A1745CD00617B18 /* SendWeiboViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendWeiboViewController.m; sourceTree = "<group>"; };
+		09A47DB21A1763D900617B18 /* SendToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendToolBar.h; sourceTree = "<group>"; };
+		09A47DB31A1763D900617B18 /* SendToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendToolBar.m; sourceTree = "<group>"; };
 		09A6AFFC1A1487E0006EC2B4 /* ADWeiboPhptoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADWeiboPhptoView.h; sourceTree = "<group>"; };
 		09A6AFFD1A1487E0006EC2B4 /* ADWeiboPhptoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADWeiboPhptoView.m; sourceTree = "<group>"; };
 		09A6B0001A14C074006EC2B4 /* MJPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhoto.h; sourceTree = "<group>"; };
@@ -378,6 +385,7 @@
 			isa = PBXGroup;
 			children = (
 				0919237A1A0BD6D800538C0C /* Main */,
+				09A47DAB1A17450400617B18 /* SendWeibo */,
 				0919236E1A0BD62A00538C0C /* Home */,
 				0919236A1A0BD62A00538C0C /* Discover */,
 				091923721A0BD62A00538C0C /* Me */,
@@ -489,6 +497,7 @@
 				099A12EB1A0F5AD6008B5707 /* SinaOAuth.m */,
 				09B03B2E1A0FBC86009D11DF /* OAuthViewControllViewController.h */,
 				09B03B2F1A0FBC86009D11DF /* OAuthViewControllViewController.m */,
+				09A47DAA1A173FBE00617B18 /* ADWeiboDefine.h */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -667,6 +676,17 @@
 				09A339951A0E0A6100A45ADF /* WelcomeViewController.m */,
 			);
 			path = Welcome;
+			sourceTree = "<group>";
+		};
+		09A47DAB1A17450400617B18 /* SendWeibo */ = {
+			isa = PBXGroup;
+			children = (
+				09A47DAC1A1745CD00617B18 /* SendWeiboViewController.h */,
+				09A47DAD1A1745CD00617B18 /* SendWeiboViewController.m */,
+				09A47DB21A1763D900617B18 /* SendToolBar.h */,
+				09A47DB31A1763D900617B18 /* SendToolBar.m */,
+			);
+			path = SendWeibo;
 			sourceTree = "<group>";
 		};
 		09A6AFFF1A14C074006EC2B4 /* MJPhotoBrowser */ = {
@@ -852,6 +872,7 @@
 				091923931A0BDB5F00538C0C /* UIImage+AD.m in Sources */,
 				09A6B0221A14C26F006EC2B4 /* SDWebImageManager+MJ.m in Sources */,
 				091923891A0BD7A500538C0C /* ADMeTableViewController.m in Sources */,
+				09A47DAE1A1745CD00617B18 /* SendWeiboViewController.m in Sources */,
 				0998183D1A108F6E00530EA1 /* SDWebImagePrefetcher.m in Sources */,
 				09A2152C1A133E320048C5B7 /* ADWeiboToolBar.m in Sources */,
 				09B03B301A0FBC86009D11DF /* OAuthViewControllViewController.m in Sources */,
@@ -908,6 +929,7 @@
 				09A6B00D1A14C074006EC2B4 /* MJPhoto.m in Sources */,
 				09A6B01F1A14C257006EC2B4 /* UIImageView+MJWebCache.m in Sources */,
 				0998183A1A108F6E00530EA1 /* SDWebImageDownloader.m in Sources */,
+				09A47DB41A1763D900617B18 /* SendToolBar.m in Sources */,
 				09A339961A0E0A6100A45ADF /* WelcomeViewController.m in Sources */,
 				099818361A108F6E00530EA1 /* NSData+ImageContentType.m in Sources */,
 				091923831A0BD77F00538C0C /* ADDiscoverTableViewController.m in Sources */,

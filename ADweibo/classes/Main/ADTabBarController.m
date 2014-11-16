@@ -15,6 +15,7 @@
 #import "ADNavigationViewController.h"
 #import "UIImage+AD.h"
 #import "ADTabBar.h"
+#import "SendWeiboViewController.h"
 
 @interface ADTabBarController ()
 
@@ -50,6 +51,8 @@
     [self initAllChildViewControll];
     //监视按钮点击
     [self btnclick];
+    //监视加号按钮点击
+    [self plusBtnclick];
 
 }
 //viw即将显示的时候，删除系统自带的tabBarItem
@@ -113,6 +116,15 @@
                 [tempSubArr[tag] performSelector:@selector(clickAgain)];
             }
         }
+    };
+}
+//点加好按钮弹出发微博的控制器
+-(void)plusBtnclick{
+    __weak typeof(self) tarBarCtrl=self;
+    self.customTabBar.plusBtnClickBlock=^{
+        SendWeiboViewController *sendCtrl=[[SendWeiboViewController alloc]init];
+        ADNavigationViewController *naviCtrl=[[ADNavigationViewController alloc]initWithRootViewController:sendCtrl];
+        [tarBarCtrl presentViewController:naviCtrl animated:YES completion:nil];
     };
 }
 

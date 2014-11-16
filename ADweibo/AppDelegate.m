@@ -11,6 +11,7 @@
 #import "WelcomeViewController.h"
 #import "SinaOAuth.h"
 #import "OAuthViewControllViewController.h"
+#import "SDWebImageManager.h"
 
 @implementation AppDelegate
 
@@ -81,7 +82,13 @@
     //收到token再把tabBarController设置进去
     self.window.rootViewController=self.tabBarController;
 }
-
+//内存警告的时候清除sdwebimage的内存缓存（貌似不写内存警告时间他自己也会清除）
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application{
+    //停止下载
+    [[SDWebImageManager sharedManager] cancelAll];
+    //清除内存缓存
+    [[SDWebImageManager sharedManager].imageCache clearMemory];
+}
 
 
 @end

@@ -92,7 +92,6 @@
             photoView.hidden=YES;
         }
     }
-
 }
 -(void)layoutSubviews{
     [super layoutSubviews];

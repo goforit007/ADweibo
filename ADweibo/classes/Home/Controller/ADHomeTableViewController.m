@@ -62,7 +62,7 @@
     //设置上拉下拉刷新
     [self setRefFreshView];
     //每隔60s请求一次未读微博数目
-    [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(UnreadWeiboMonitor) userInfo:nil repeats:YES];
+    [NSTimer scheduledTimerWithTimeInterval:kUnreadRequestTime target:self selector:@selector(UnreadWeiboMonitor) userInfo:nil repeats:YES];
 
 }
 -(void)initBarButtonItem{

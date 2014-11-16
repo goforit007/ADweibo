@@ -37,8 +37,6 @@
         self.adjustsImageWhenHighlighted=NO;
         }
     return self;
-    
-    ;
 }
 
 - (CGRect)imageRectForContentRect:(CGRect)contentRect{

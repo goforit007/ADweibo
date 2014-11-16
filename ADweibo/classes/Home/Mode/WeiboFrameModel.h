@@ -9,24 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "WeiboModel.h"
 
-//cell元素间距
-#define kWeiboCellBorder 6
-//昵称字体
-#define kNameUIFont [UIFont systemFontOfSize:15]
-//时间字体
-#define kTImeUIFont [UIFont systemFontOfSize:13]
-//来源字体
-#define kSourceUIFont [UIFont systemFontOfSize:13]
-//正文字体
-#define kTTextUIFont [UIFont systemFontOfSize:15]
-//转发正文字体
-#define kRetTextUIFont [UIFont systemFontOfSize:15]
-//表格的边框宽度
-#define kTableBorder 10
-//配图的宽高
-#define kWeiboPhontSize 70
-#define kWeiboPhontPadding 10
-
 @interface WeiboFrameModel : NSObject
 
 @property(nonatomic,strong)WeiboModel *weibo;

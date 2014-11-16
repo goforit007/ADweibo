@@ -76,7 +76,12 @@
     [self.plusBtn setBackgroundImage:bkImg forState:UIControlStateNormal];
     [self.plusBtn setBackgroundImage:[UIImage imageWithName:@"tabbar_compose_button_highlighted"] forState:UIControlStateHighlighted];
     self.plusBtn.bounds=CGRectMake(0, 0, bkImg.size.width, bkImg.size.height);
+    [self.plusBtn addTarget:self action:@selector(plusBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.plusBtn];
+}
+
+-(void)plusBtnClick:(UIButton *)plusBtn{
+    self.plusBtnClickBlock();
 }
 
 //设置子按钮的布局

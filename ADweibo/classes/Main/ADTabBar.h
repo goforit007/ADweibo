@@ -11,6 +11,7 @@
 @interface ADTabBar : UIView
 
 @property(nonatomic,copy)void (^btnClickBlock)(int,BOOL);
+@property(nonatomic,copy)void (^plusBtnClickBlock)();
 -(void)addTabBarButtonWithItem:(UITabBarItem *)item;
 
 @end
