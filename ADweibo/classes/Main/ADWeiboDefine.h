@@ -7,7 +7,7 @@
 //  整个项目相关的宏
 
 // 0.获取未读微博周期(s)
-#define kUnreadRequestTime 60
+#define kUnreadRequestTime 5
 // 1.判断是否为iOS7
 #define iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
 

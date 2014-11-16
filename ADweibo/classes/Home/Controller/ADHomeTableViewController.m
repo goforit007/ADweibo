@@ -62,7 +62,8 @@
     //设置上拉下拉刷新
     [self setRefFreshView];
     //每隔60s请求一次未读微博数目
-    [NSTimer scheduledTimerWithTimeInterval:kUnreadRequestTime target:self selector:@selector(UnreadWeiboMonitor) userInfo:nil repeats:YES];
+    NSTimer *timer=[NSTimer scheduledTimerWithTimeInterval:kUnreadRequestTime target:self selector:@selector(UnreadWeiboMonitor) userInfo:nil repeats:YES];
+    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
 
 }
 -(void)initBarButtonItem{
@@ -162,7 +163,9 @@
         if([unreadCount integerValue]>0){
             NSString *unreadStr=[NSString stringWithFormat:@"%@",unreadCount];
             self.tabBarItem.badgeValue=unreadStr;
-                        return;
+            //设置app图标的未读
+            [UIApplication sharedApplication].applicationIconBadgeNumber=[unreadCount integerValue];
+            return;
         }
     }
     [self.tableView reloadData];

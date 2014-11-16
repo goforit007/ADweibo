@@ -59,6 +59,7 @@ static SinaOAuth *oauth=nil;
     _userID=[[NSUserDefaults standardUserDefaults] stringForKey:kUserID];
     return _userID;
 }
+
 @end
 
 

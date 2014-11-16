@@ -89,6 +89,15 @@
     //清除内存缓存
     [[SDWebImageManager sharedManager].imageCache clearMemory];
 }
-
-
+//app进入后台，继续监视未读微博
+- (void)applicationDidEnterBackground:(UIApplication *)application{
+    //在后台开启任务让程序持续运行，能运行多久不确定
+    [application beginBackgroundTaskWithExpirationHandler:^{
+        NSLog(@"后台任务过期了");
+    }];
+}
+- (void)applicationWillResignActive:(UIApplication *)application{
+    //进入app时，清除app提示数字
+    [UIApplication sharedApplication].applicationIconBadgeNumber=0;
+}
 @end

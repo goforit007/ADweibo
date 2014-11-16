@@ -138,16 +138,18 @@
     [MBProgressHUD showError:@"发送错误" toView:nil];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
+/**
+ *  体力活，不做了
+ */
 -(void)btnClick{
-    __weak typeof(self) tempSentCtrl=self;
+    //__weak typeof(self) tempSentCtrl=self;
     self.toolbar.toolBarButtonClickBlock=^(toolBarButtonType type){
         switch (type) {
             case toolBarButtonTypeCamera://相机
-                [tempSentCtrl openPicture:UIImagePickerControllerSourceTypeCamera];
+                //[tempSentCtrl openPicture:UIImagePickerControllerSourceTypeCamera];
                 break;
             case toolBarButtonTypePicture://图片
-                [tempSentCtrl openPicture:UIImagePickerControllerSourceTypePhotoLibrary];
+                //[tempSentCtrl openPicture:UIImagePickerControllerSourceTypePhotoLibrary];
                 break;
             case toolBarButtonTypeMention://@
                 break;
